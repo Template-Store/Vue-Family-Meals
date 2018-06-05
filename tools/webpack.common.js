@@ -27,6 +27,7 @@ module.exports = {
   resolve: {
     alias: alias,
     extensions: [
+      '.vue',
       '.web.tsx',
       '.web.ts',
       '.web.jsx',
@@ -90,6 +91,31 @@ module.exports = {
           minetype: 'application/font-woff2',
           name: fontName
         }
+      },
+      {
+        test: /\.(js|vue)$/,
+        loader: 'eslint-loader',
+        enforce: 'pre',
+        include: [resolve('src'), resolve('test')],
+        options: {
+          formatter: require('eslint-friendly-formatter')
+        }
+      },
+      {
+        test: /\.vue$/,
+        loader: 'vue-loader',
+        options: vueLoaderConfig
+      },
+      {
+        test: /\.js$/,
+        loader: 'babel-loader',
+        include: [resolve('src'), resolve('test')]
+      },
+      {
+        test: /\.html$/,
+        loader: 'html-loader'
+        //include: [path.resolve(__dirname, "src/components")]
+        // 用于处理 components 文件下 template.html
       }
     ]
   },
