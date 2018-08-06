@@ -18,7 +18,7 @@ module.exports = {
   mode: 'development',
   entry: {
     common: [path.join(__dirname, '../src/common')],
-    main: [path.join(__dirname, '../src/main')]
+    main: [path.join(__dirname, '../src/main.vue')]
   },
   output: {
     filename: jsName,
@@ -92,15 +92,15 @@ module.exports = {
           name: fontName
         }
       },
-      {
-        test: /\.(js|vue)$/,
-        loader: 'eslint-loader',
-        enforce: 'pre',
-        include: [path.resolve('src'), path.resolve('test')],
-        options: {
-          formatter: require('eslint-friendly-formatter')
-        }
-      },
+      // {
+      //   test: /\.(js|vue)$/,
+      //   loader: 'eslint-loader',
+      //   enforce: 'pre',
+      //   include: [path.resolve('src'), path.resolve('test')],
+      //   options: {
+      //     formatter: require('eslint-friendly-formatter')
+      //   }
+      // },
       {
         test: /\.vue$/,
         loader: 'vue-loader',

@@ -11,7 +11,7 @@
     "noImplicitAny": false,
     "isolatedModules": false,
     "removeComments": false,
-    "jsx": "react",
+    "tsx": "vue",
     "preserveConstEnums": true,
     "suppressImplicitAnyIndexErrors": true,
     "allowSyntheticDefaultImports": true,
